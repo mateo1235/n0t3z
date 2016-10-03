@@ -26,6 +26,4 @@ notes.route('/notes')
 
 app.use('/api', notes);
 
-app.listen(3000, function() {
-  console.log("Node server running on http://localhost:3000");
-});
+app.listen(process.env.PORT || 5000);
