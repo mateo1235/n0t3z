@@ -24,6 +24,9 @@ var notes = express.Router();
 notes.route('/notes')
   .get(NoteCtrl.findAllNotes);
 
+notes.route('/notes/new')
+  .post(NoteCtrl.createNote);
+
 app.use('/api', notes);
 
 app.listen(process.env.PORT || 5000);
