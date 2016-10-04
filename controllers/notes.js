@@ -14,7 +14,7 @@ exports.createNote = function(req, res) {
     var about = req.param('about');
     var registered = '2016-05-01T09:36:03 +05:00';
     db.note.save({isActive: true, about: about, registered: registered}, function (err, docs) {
-      if(err) res.send(500, err.message);
+      if(err || about == null) res.sendStatus(500);
       console.log('GET /notes/new');
       res.status(200).jsonp(about);
     });

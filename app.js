@@ -28,5 +28,5 @@ notes.route('/notes/new')
   .post(NoteCtrl.createNote);
 
 app.use('/api', notes);
-
+module.exports = app;
 app.listen(process.env.PORT || 5000);
